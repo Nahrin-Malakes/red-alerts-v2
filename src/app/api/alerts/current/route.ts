@@ -23,7 +23,7 @@ export const GET = async () => {
       return Response.json(data.data);
     } catch (error) {
       console.error();
-      return Response.error();
+      return Response.json({});
     }
   } else {
     return Response.json(null);
