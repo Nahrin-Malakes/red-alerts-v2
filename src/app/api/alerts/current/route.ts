@@ -18,8 +18,13 @@ export const GET = async () => {
   const responseText = decoder.decode(await res.arrayBuffer()).trim();
 
   if (responseText.length > 0) {
-    const data = JSON.parse(responseText);
-    return Response.json(data.data);
+    try {
+      const data = JSON.parse(responseText);
+      return Response.json(data.data);
+    } catch (error) {
+      console.error(error);
+      return;
+    }
   } else {
     return Response.json(null);
   }
