@@ -60,8 +60,6 @@ export function Map({ locations }: MapProps) {
     ));
   };
 
-  console.log("re-renderd");
-
   return (
     <div className="absolute z-0">
       {isLoaded && (

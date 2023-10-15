@@ -22,7 +22,6 @@ export async function GetCurrentAlarms() {
 
   if (responseText.length > 0) {
     const data = JSON.parse(responseText);
-    console.log(data.data);
     return data.data;
   } else {
     return null;
