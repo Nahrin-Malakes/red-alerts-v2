@@ -22,8 +22,8 @@ export const GET = async () => {
       const data = JSON.parse(responseText);
       return Response.json(data.data);
     } catch (error) {
-      console.error(error);
-      return;
+      console.error();
+      return Response.error();
     }
   } else {
     return Response.json(null);
