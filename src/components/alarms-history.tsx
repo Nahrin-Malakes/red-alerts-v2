@@ -1,12 +1,11 @@
 "use client";
 
-import { Alarm } from "@/types/alarm";
-import { revalidateTag } from "next/cache";
 import { useEffect, useState } from "react";
+
+import { Alarm } from "@/types/alarm";
 
 export function AlarmsHistory() {
   const [alerts, setAlerts] = useState<Alarm[]>();
-  // let alarms = await getAlarmsHistory();
 
   const getAlarmsHistory = async () => {
     const alarms = await fetch("/api/alerts/history");
@@ -32,11 +31,12 @@ export function AlarmsHistory() {
         alerts.map((alert) => (
           <div
             key={alert.rid}
-            className="p-2 border flex flex-row-reverse rounded-md mr-2 bg-red-700"
+            className="p-2 border flex rounded-md mr-2 bg-red-700"
           >
             <div className="flex flex-col">
-              <p className="flex flex-row-reverse">{alert.data}</p>
-              <p className="flex flex-row-reverse">
+              <p className="flex ">{alert.data}</p>
+
+              <p className="flex ">
                 {alert.date} - {alert.time}
               </p>
             </div>

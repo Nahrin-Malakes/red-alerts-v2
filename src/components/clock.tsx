@@ -16,13 +16,13 @@ export function Clock() {
   }, []);
 
   return (
-    <div className="flex items-center flex-row-reverse">
+    <div className="flex items-center">
       {
         <p className="text-xl text-red-400">
           {format(currentTime, "HH:mm:ss")}
         </p>
       }
-      <p className="pr-2">{format(currentTime, "dd/MM/yyyy", {})}</p>
+      <p className="pl-2">{format(currentTime, "dd/MM/yyyy", {})}</p>
     </div>
   );
 }
