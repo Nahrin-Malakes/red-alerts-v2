@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Red Alarms",
-  description: "Get Red Alarms directly in the web",
+  description: "Get Red Alarms directly in the web.",
 };
 
 export default function RootLayout({

@@ -35,9 +35,15 @@ export function Map({ locations }: MapProps) {
           }
         });
       });
-      map.fitBounds(bounds);
+      if (locations.length > 1) {
+        map.fitBounds(bounds);
+      } else {
+        map.setCenter(bounds.getCenter());
+        map.setZoom(14);
+      }
     } else {
       map?.setCenter({ lat: 31.5469501, lng: 34.6863132 });
+      map?.setZoom(10);
     }
   }, [map, locations]);
 

@@ -3,7 +3,7 @@
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
 
-export function Clock() {
+export default function Clock() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {

@@ -1,8 +1,10 @@
 "use client";
+import dynamic from "next/dynamic";
+
 import { Separator } from "@/components/ui/separator";
 
+const Clock = dynamic(() => import("../components/clock"), { ssr: false });
 import { AlarmsHistory } from "@/components/alarms-history";
-import { Clock } from "@/components/clock";
 import { Map } from "@/components/map";
 import { useEffect, useState } from "react";
 
